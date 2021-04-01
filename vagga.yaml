@@ -144,10 +144,10 @@ containers:
 
   pytest:
     setup:
-    - !Ubuntu cosmic
-    # - !AptTrust
-    #   keys: [4AB0F789CBA31744CC7DA76A8CF63AD3F06FC659]
-    # - !UbuntuPPA jonathonf/python-3.6
+    - !Ubuntu focal
+    - !AptTrust
+      keys: [F23C5A6CF475977595C89F51BA6932366A755776]
+    - !UbuntuPPA deadsnakes/ppa
     - !Install [libcurl4, libdw1, python3.7, python3.7-dev, ca-certificates]
     - !BuildDeps
       - wget
@@ -157,6 +157,7 @@ containers:
       - g++
       - pkg-config
       - libdw-dev
+      - libssl-dev
       - libiberty-dev
       - zlib1g-dev
       - libcurl4-openssl-dev
